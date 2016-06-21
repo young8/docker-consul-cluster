@@ -1,0 +1,25 @@
+{
+  "client_addr": "0.0.0.0",
+  "data_dir": "/var/lib/consul",
+  "datacenter": "DC-1",
+  "enable_syslog": true,
+  "log_level": "INFO",
+  "ports": {
+    "dns": 53,
+    "http": 8500,
+    "rpc": 8400,
+    "serf_lan": 8301,
+    "serf_wan": 8302,
+    "server": 8300
+  },
+  "server": false,
+  "encrypt": "eg/0ZKGpPrI9pfx0UbyB+w==",
+  "start_join": [
+    "172.17.0.3",
+    "172.17.0.4",
+    "172.17.0.5"
+  ],
+  "ui_dir": "/etc/consul/",
+  "verify_incoming": false,
+  "verify_outgoing": false
+}

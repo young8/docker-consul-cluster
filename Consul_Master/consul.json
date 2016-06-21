@@ -1,0 +1,24 @@
+{
+    "bootstrap_expect": 3,
+    "server": true,
+    "client_addr": "0.0.0.0",
+    "datacenter": "DC-1",
+    "enable_syslog": true,
+    "log_level": "INFO",
+    "ports": {
+    "dns": 53,
+    "http": 8500,
+    "rpc": 8400,
+    "serf_lan": 8301,
+    "serf_wan": 8302,
+    "server": 8300
+    },
+    "data_dir": "/var/lib/consul",
+    "encrypt": "eg/0ZKGpPrI9pfx0UbyB+w==",
+    "recursors": [
+        "8.8.8.8"
+    ],
+    "server": true,
+    "verify_incoming": false,
+    "verify_outgoing": false
+}
