@@ -1,0 +1,12 @@
+** docker run -d --name consul-000.master.io -h consul-000.master.io abhishekamralkar/consul-master
+** JOIN_IP="$(docker inspect -f '{{.NetworkSettings.IPAddress}}' consul-000.master.io)"
+** docker run -d --name consul-001.master.io -h consul-001.master.io abhishekamralkar/consul-master -server -join $JOIN_IP
+** docker run -d --name consul-002.master.io -h consul-002.master.io abhishekamralkar/consul-master -server -join $JOIN_IP
+** docker run -d -p 8500:8500 --name consul-000.slave.io -h consul-000.slave.io abhishekamralkar/consul.slave
+
+
+172.17.0.6
+
+
+
+knife bootstrap chef-server-000-az.eastus.cloudapp.azure.com -x star -P  --sudo

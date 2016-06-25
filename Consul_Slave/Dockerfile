@@ -15,7 +15,7 @@ ADD start_consul.sh /etc/service/consul/run
 RUN chmod 777 /etc/service/consul/run
 ADD consul.json /etc/
 ENV CONSUL_VERSION=0.6.4
-
+ENV CONSUL_TEMPLATE_VERSION=0.10.0
 
 RUN ( cd /tmp && wget --no-check-certificate \
 https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip \
@@ -27,6 +27,13 @@ rm -rf /tmp/* )
 RUN (cd /etc/consul && wget --no-check-certificate \
 https://releases.hashicorp.com/consul/0.6.4/consul_0.6.4_web_ui.zip -O /etc/consul/consul.zip && \
 unzip /etc/consul/consul.zip && \
+rm -rf /tmp/* )
+
+RUN ( cd /tmp && wget --no-check-certificate \
+https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip \
+-O /tmp/consul_template.zip && \
+unzip /tmp/consul_template.zip && \
+mv /tmp/consul-template /usr/bin && \
 rm -rf /tmp/* )
  
 # Use baseimage-docker's init process.

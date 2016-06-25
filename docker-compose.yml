@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  consul-000.master.io:
+    image: abhishekamralkar/consul-master
+    ports:
+     - "8300"
+     - "8301"
+     - "8302"
+     - "8400"
+     - "8500"
+    environment:
+     - ENV=development
+ 
+
+  consul-000.slave.io:
+    image: abhishekamralkar/consul-slave
+    ports:
+     - "8300"
+     - "8301"
+     - "8302"
+     - "8400"
+     - "8500"
+    environment:
+     - ENV=development
